@@ -61,6 +61,7 @@ export default function LoginForm() {
           </div>
         </div>
         <LoginButton />
+        <div className="mt-2 text-sm text-red-500">*Hint: user@nextmail.com, 123456</div>
         <div 
           className="flex h-8 items-end space-x-1"
           aria-live='polite'
@@ -76,6 +77,7 @@ export default function LoginForm() {
           }
         </div>
       </div>
+      
     </form>
   );
 }
@@ -83,7 +85,7 @@ export default function LoginForm() {
 function LoginButton() {
   const { pending } = useFormStatus();
   return (
-    <Button className="mt-4 w-full">
+    <Button className="mt-4 w-full" aria-disabled={pending}>
       Log in <ArrowRightIcon className="ml-auto h-5 w-5 text-gray-50" />
     </Button>
   );
